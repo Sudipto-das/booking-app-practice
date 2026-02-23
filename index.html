@@ -5,30 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Booking App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form onsubmit="bookBusTicket(event)">
-        <input name="name" placeholder="Name" id="name" type="text" />
-        <br><br>
 
-        <input name="email" placeholder="Email" id="email" type="email" />
-        <br><br>
+    <div class="container">
+        <h2>Bus Booking App</h2>
 
-        <input name="phone" placeholder="Phone" id="phone" type="tel" />
-        <br><br>
+        <form onsubmit="bookBusTicket(event)" class="booking-form">
+            <input name="name" placeholder="Name" id="name" type="text" required />
+            <input name="email" placeholder="Email" id="email" type="email" required />
+            <input name="phone" placeholder="Phone" id="phone" type="tel" required />
 
-        <label for="bus">Bus No.</label>
-        <select id="bus" name="bus">
-            <option value="">Select a bus</option>
-            <option value="bus1">Bus 1</option>
-            <option value="bus2">Bus 2</option>
-            <option value="bus3">Bus 3</option>
-        </select>
-        <br><br>
-        <button id="book-btn" type="submit">Book Now</button>
-    </form>
+            <select id="bus" name="bus" required>
+                <option value="">Select a bus</option>
+                <option value="Bus 1">Bus 1</option>
+                <option value="Bus 2">Bus 2</option>
+                <option value="Bus 3">Bus 3</option>
+            </select>
 
+            <button id="book-btn" type="submit">Book Now</button>
+        </form>
+
+        <ul id="bookingList"></ul>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
     <script src="index.js"></script>
